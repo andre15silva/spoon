@@ -1,4 +1,6 @@
 language: java
+jdk:
+  - openjdk14
 
 # moving to Ubuntu Bionic 18.04, see https://docs.travis-ci.com/user/reference/overview/
 dist: bionic
@@ -20,7 +22,7 @@ env:
 #   - it makes the build longer (we want a fast job)
 # Java8
 install:
-  - sudo apt-get -y install openjdk-14-jdk
+  - sudo apt-get -y install openjdk-8-jdk
   # we want silent logs in travis but verbose ones on the developer machine (ie the default logback config)
   - mv chore/travis/logback.xml src/test/resources/
 
